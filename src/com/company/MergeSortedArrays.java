@@ -9,7 +9,7 @@ public class MergeSortedArrays {
         int[] arr1 = {1, 3, 4, 5};
         int[] arr2 = {2, 6, 7, 8};
 
-        printArray(mergeArrays2(arr1, arr2));
+        printArray(mergeArrays(arr1, arr2));
 
     }
 
