@@ -7,7 +7,7 @@ public class Main {
         int[] arr1 = {1, 3, 4, 5};
         int[] arr2 = {2, 6, 7, 8};
 
-        printArray(mergeArrays2(arr1, arr2));
+        ArrayUtil.print(mergeArrays2(arr1, arr2));
 
     }
 
@@ -75,9 +75,4 @@ public class Main {
         return mergedArray;
     }
 
-    private static void printArray(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + ",");
-        }
-    }
 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * find to numbers that add up to n
+ * time Complexity O(N^2)
  */
 public class TwoNumbersThatAddUpToN {
 
