@@ -1,5 +1,10 @@
-package com.company;
+package com.company.array;
 
+/**
+ * In this problem, you have to implement the int findSecondMaximum(int[] arr) method,
+ * which will traverse the whole array and return the second largest element present in the array.
+ * Assumption: Array should contain at least two unique elements.
+ */
 public class SecondMaximum {
     public static void main(String[] args) {
         int[] arr = {9, 2, 3, 6};

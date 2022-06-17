@@ -1,9 +1,14 @@
-package com.company;
+package com.company.array;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * In this problem, you have to implement the int findFirstUnique(int[] arr) method that will look
+ * for a first unique integer, which appears only once in the whole array.
+ * The function returns -1 if no unique number is found.
+ */
 public class FindFirstUnique {
     public static void main(String[] args) {
         int[] arr = {9, 2, 3, 2, 6, 6};

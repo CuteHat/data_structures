@@ -1,7 +1,8 @@
-package com.company;
+package com.company.array;
 
 /**
- * two solutions to merge sorted arrays
+ * In this problem, given two sorted arrays, you have to implement the int[] mergeArrays(int[] arr1, int[] arr2) method,
+ * which returns an array consisting of all elements of both arrays in a sorted way.
  */
 public class MergeSortedArrays {
     public static void main(String[] args) {
