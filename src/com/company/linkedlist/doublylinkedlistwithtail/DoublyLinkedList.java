@@ -98,4 +98,5 @@ public class DoublyLinkedList<T> {
 
         System.out.println(temp.data.toString() + " -> null");
     }
+
 }

@@ -109,6 +109,33 @@ public class SinglyLinkedList<T> {
         size--;
     }
 
+    public int length() {
+        int count = 0;
+
+        Node<T> current = head;
+        while (current != null) {
+            count++;
+            current = current.nextNode;
+        }
+        return count;
+    }
+
+    public void printList() {
+        if (isEmpty()) {
+            System.out.println("List is Empty!");
+            return;
+        }
+
+        Node<T> temp = head;
+        System.out.print("List : ");
+
+        while (temp.nextNode != null) {
+            System.out.print(temp.data.toString() + " -> ");
+            temp = temp.nextNode;
+        }
+
+        System.out.println(temp.data.toString() + " -> null");
+    }
 
     /**
      * we define isEmpty as head node pointing to null,
