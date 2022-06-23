@@ -30,8 +30,8 @@ public class DetectLoop {
     public static <T> boolean detectLoop2(SinglyLinkedList<T> list) {
         System.out.println(list.size);
 
-        Node<T> slow = list.head;
-        Node<T> fast = list.head;
+        Node<T> slow = list.headNode;
+        Node<T> fast = list.headNode;
         while (slow != null && fast != null && fast.nextNode != null) {
             slow = slow.nextNode;
             fast = fast.nextNode.nextNode;
@@ -45,7 +45,7 @@ public class DetectLoop {
     public static <T> boolean detectLoop(SinglyLinkedList<T> list) {
         Set<T> numberSet = new HashSet<>();
 
-        Node<T> current = list.head;
+        Node<T> current = list.headNode;
         while (current != null) {
             if (!numberSet.add(current.data)) return true;
             current = current.nextNode;

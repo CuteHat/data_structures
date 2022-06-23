@@ -12,16 +12,16 @@ public class ReverseSLL {
     public static void main(String[] args) {
         SinglyLinkedList<Integer> sLL = new SinglyLinkedList<>();
         sLL.insertHead(10);
-        sLL.insertTail(9);
-        sLL.insertTail(4);
-        sLL.insertTail(6);
+        sLL.insertAtEnd(9);
+        sLL.insertAtEnd(4);
+        sLL.insertAtEnd(6);
         sLL.printList();
         reverse(sLL);
         sLL.printList();
     }
 
     public static <T> void reverse(SinglyLinkedList<T> list) {
-        Node<T> nextNode = list.head;
+        Node<T> nextNode = list.headNode;
         Node<T> prevNode = null;
 
         while (nextNode != null) {
@@ -32,6 +32,6 @@ public class ReverseSLL {
             prevNode = currentNode;
         }
 
-        list.head = prevNode;
+        list.headNode = prevNode;
     }
 }

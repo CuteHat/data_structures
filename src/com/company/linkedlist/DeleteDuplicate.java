@@ -26,7 +26,7 @@ public class DeleteDuplicate {
     public static <T> void removeDuplicates(SinglyLinkedList<T> list) {
         Set<T> uniqueData = new HashSet<>();
 
-        Node<T> current = list.head;
+        Node<T> current = list.headNode;
         Node<T> prevNode = null;
         while (current != null) {
 

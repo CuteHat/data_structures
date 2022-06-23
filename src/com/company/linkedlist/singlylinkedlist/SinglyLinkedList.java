@@ -1,20 +1,22 @@
 package com.company.linkedlist.singlylinkedlist;
 
+import java.util.HashSet;
+
 public class SinglyLinkedList<T> {
-    public Node<T> head;
+    public Node<T> headNode;
 
     public int size;
 
     public SinglyLinkedList() {
-        this.head = null;
+        this.headNode = null;
         this.size = 0;
     }
 
     /**
      * custom constructors
      */
-    public SinglyLinkedList(Node<T> head) {
-        this.head = head;
+    public SinglyLinkedList(Node<T> headNode) {
+        this.headNode = headNode;
         this.size = 1;
     }
 
@@ -23,17 +25,17 @@ public class SinglyLinkedList<T> {
     }
 
     public void insertHead(T data) {
-        this.head = new Node<>(data, this.head);
+        this.headNode = new Node<>(data, this.headNode);
         size++;
     }
 
-    public void insertTail(T data) {
+    public void insertAtEnd(T data) {
         if (isEmpty()) {
             insertHead(data);
             return;
         }
 
-        Node<T> node = head;
+        Node<T> node = headNode;
         while (node.nextNode != null) {
             node = node.nextNode;
         }
@@ -43,7 +45,7 @@ public class SinglyLinkedList<T> {
     }
 
     public void insertAfter(T targetNodeData, T data) {
-        Node<T> node = head;
+        Node<T> node = headNode;
         Node<T> targetNode = null;
 
         while (node.nextNode != null) {
@@ -61,7 +63,7 @@ public class SinglyLinkedList<T> {
     }
 
     public boolean searchNode(T data) {
-        Node<T> node = this.head;
+        Node<T> node = this.headNode;
         while (node.nextNode != null) {
             if (node.data.equals(data)) {
                 return true;
@@ -75,10 +77,10 @@ public class SinglyLinkedList<T> {
      * Not tested
      */
     public void deleteHead() {
-        if (head == null)
+        if (headNode == null)
             return;
 
-        head = head.nextNode;
+        headNode = headNode.nextNode;
         size--;
     }
 
@@ -86,7 +88,7 @@ public class SinglyLinkedList<T> {
         if (isEmpty()) return;
         if (!searchNode(data)) return;
 
-        Node<T> currentNode = head;
+        Node<T> currentNode = headNode;
         Node<T> prevNode = null;
 
         if (currentNode.data.equals(data)) {
@@ -112,7 +114,7 @@ public class SinglyLinkedList<T> {
     public int length() {
         int count = 0;
 
-        Node<T> current = head;
+        Node<T> current = headNode;
         while (current != null) {
             count++;
             current = current.nextNode;
@@ -126,7 +128,7 @@ public class SinglyLinkedList<T> {
             return;
         }
 
-        Node<T> temp = head;
+        Node<T> temp = headNode;
         System.out.print("List : ");
 
         while (temp.nextNode != null) {
@@ -137,11 +139,35 @@ public class SinglyLinkedList<T> {
         System.out.println(temp.data.toString() + " -> null");
     }
 
+    public void removeDuplicatesWithHashing() {
+        Node<T> current = this.headNode;
+        Node<T> prevNode = this.headNode;
+        //will store all the elements that we observe once
+        HashSet<T> visitedNodes = new HashSet<T>();
+
+        if (!isEmpty() && current.nextNode != null) {
+            while (current != null) {
+                //check if already visited then delete this node
+                if (visitedNodes.contains(current.data)) {
+                    //deleting the node by undating the pointer of previous node
+                    prevNode.nextNode = current.nextNode;
+                    current = current.nextNode;
+                } else {
+                    //if node was not already visited then add it to the visited set
+                    visitedNodes.add(current.data);
+                    //moving on to next element in the list
+                    prevNode = current;
+                    current = current.nextNode;
+                }
+            }
+        }
+    }
+
     /**
      * we define isEmpty as head node pointing to null,
      * maybe checking size is better?
      */
     public boolean isEmpty() {
-        return head == null;
+        return headNode == null;
     }
 }

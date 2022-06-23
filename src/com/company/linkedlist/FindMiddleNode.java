@@ -15,8 +15,8 @@ public class FindMiddleNode {
      * Smartest solution !
      */
     public static <T> Object findMiddle3(SinglyLinkedList<T> list) {
-        Node<T> current = list.head; // goes twice as fast
-        Node<T> mid = list.head;
+        Node<T> current = list.headNode; // goes twice as fast
+        Node<T> mid = list.headNode;
 
         while (current != null && current.nextNode != null) {
             current = current.nextNode.nextNode;
@@ -31,7 +31,7 @@ public class FindMiddleNode {
      */
     public static <T> Object findMiddle2(SinglyLinkedList<T> list) {
         ArrayList<T> values = new ArrayList<>();
-        Node<T> current = list.head;
+        Node<T> current = list.headNode;
 
         while (current != null) {
             values.add(current.data);
@@ -54,7 +54,7 @@ public class FindMiddleNode {
         if (list.size % 2 == 0) midIndex--;
 
         int indexCounter = 0;
-        Node<T> current = list.head;
+        Node<T> current = list.headNode;
         while (current != null) {
             if (indexCounter == midIndex)
                 return current.data;
