@@ -2,12 +2,13 @@ package com.company.linkedlist.frommaterial;
 
 import java.util.*;
 
-class LinkedList {
+public class LinkedList {
     public LinkedListNode head;
 
     public LinkedList() {
         this.head = null;
     }
+
     // insertAtHead method will insert an integer element at head of a linked list.
     public void insertAtHead(int data) {
         if (this.head == null) {
@@ -18,6 +19,7 @@ class LinkedList {
             this.head = newNode;
         }
     }
+
     // insertAtTail method will insert an integer element at tail of a linked list.
     public void insertAtTail(int data) {
         if (this.head == null) {
@@ -31,13 +33,15 @@ class LinkedList {
             temp.next = newNode;
         }
     }
-    /* createLinkedList method will create the linked list using the given 
+
+    /* createLinkedList method will create the linked list using the given
       integer array with the help of InsertAthead method. */
     public void createLinkedList(List<Integer> lst) {
         for (int i = lst.size() - 1; i >= 0; i--) {
             insertAtHead(lst.get(i));
         }
     }
+
     // displayLinkedList method will display the elements of linked list.
     public void displayLinkedList() {
         LinkedListNode temp = this.head;

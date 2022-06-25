@@ -1,6 +1,6 @@
 package com.company.linkedlist.frommaterial;
 
-class LinkedListNode {
+public class LinkedListNode {
     public int data;
     public LinkedListNode next;
     public LinkedListNode prev;
